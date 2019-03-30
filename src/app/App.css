@@ -2,8 +2,8 @@
   --color-text-accent: #DEC557;
   --color-text-accent-active: #C9B55D;
 
-  --color-background: dodgerblue;
-  --color-background-dark: navy;
+  --color-background: #077787;
+  --color-background-dark: #05535E;
 }
 :local(.document_container) {
   display: flex;
@@ -82,7 +82,7 @@
   position: absolute;
   top: 0;
   right: 1em;
-  max-width: 40%;
+  max-width: 35%;
   height: 2em;
 
   display: flex;
