@@ -270,7 +270,7 @@ class App extends React.Component
                 {"Thank you for reading me! Stay amazing!"}
               </label>
               <label>
-                {"\u00A9 2018 University of California, San Diego. All rights reserved."}
+                {"\u00A9 2019 University of California, San Diego. All rights reserved."}
               </label>
             </div>
           </div>
