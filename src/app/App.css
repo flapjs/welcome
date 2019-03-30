@@ -355,6 +355,10 @@
   width: 100%;
   height: 100%;
 }
+/*For hiding scrollbars*/
+.panel_container::-webkit-scrollbar {
+  display: none;
+}
 .panel_container > * {
   scroll-snap-align: start;
 
