@@ -11,7 +11,7 @@
 }
 :local(.app_container) {
   position: relative;
-  width: 60em;
+  width: 70em;
   height: 100vh;
 }
 .header_container {

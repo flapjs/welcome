@@ -150,7 +150,7 @@ class App extends React.Component
     let launchText;
 
     //Smallest
-    if (window.matchMedia("(max-width: 400px)").matches)
+    if (window.matchMedia("(max-width: 480px)").matches)
     {
       launchText = SMALLEST_LAUNCH_BUTTON_TEXT;
     }
