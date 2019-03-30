@@ -1,0 +1,370 @@
+#root {
+  --color-text-accent: #DEC557;
+  --color-text-accent-active: #C9B55D;
+
+  --color-background: dodgerblue;
+  --color-background-dark: navy;
+}
+:local(.document_container) {
+  display: flex;
+  flex-direction: row;
+}
+:local(.app_container) {
+  position: relative;
+  width: 60em;
+  height: 100vh;
+}
+.header_container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  height: calc(100% + 2em);
+}
+.footer_container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 1em 0;
+
+  min-height: calc(100% - 7.5em);
+}
+
+.space { flex: 1; }
+
+.header_bar {
+  position: sticky;
+  top: 0;
+  border-bottom: 4px solid gold;
+
+  font-family: 'Arvo', sans-serif;
+  font-size: 3em;
+  margin-bottom: -10px;
+
+  overflow: hidden;
+  z-index: 10;
+}
+.header_content {
+  background: var(--color-background);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-top: -2em;
+
+  border-radius: 2em;
+  box-shadow: 0 6px 8px -8px black;
+}
+
+/********************************* LOGO **/
+
+.logo_container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-radius: 1em;
+  margin-left: -1em;
+  padding: 0.3em 1em;
+  padding-left: 2em;
+
+  background: white;
+  width: 100%;
+}
+.logo_container svg {
+  width: 1.3em;
+  height: 1.3em;
+  margin-right: 0.2em;
+}
+
+/********************************* MOTD **/
+
+.motd_container {
+  position: absolute;
+  top: 0;
+  right: 1em;
+  max-width: 40%;
+  height: 2em;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.motd_display {
+  display: block;
+  text-align: right;
+  font-size: 0.3em;
+  opacity: 0.3;
+}
+
+.motd_display p {
+  margin: 0;
+}
+
+.motd_button {
+  margin: 0;
+  padding: 0 0.5em;
+  padding-bottom: 0.8em;
+  background: none;
+  border: 1px solid lightgray;
+  border-radius: 1em;
+  outline: none;
+  font-size: 0.3em;
+  cursor: pointer;
+
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.motd_button:hover {
+  opacity: 1;
+}
+.motd_button:disabled {
+  opacity: 0;
+}
+
+/********************************* WELCOME **/
+
+.welcome_container {
+  flex: 1;
+  color: white;
+
+  font-size: 2em;
+  text-align: center;
+}
+
+/********************************* LAUNCH **/
+
+.launch_container {
+  width: 80%;
+  margin-top: 3em;
+  margin-bottom: 3em;
+  margin-left: 10%;
+}
+.launch_button {
+  width: 100%;
+  padding: 0.1em 1em;
+  border: 8px solid white;
+
+  cursor: pointer;
+  font-family: 'Arvo', sans-serif;
+  font-size: 4em;
+
+  color: white;
+  background: none;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+  transition: color 0.3s ease, background-color 0.3s ease, text-shadow 0.3s ease;
+}
+.launch_button:hover {
+  background: white;
+  color: var(--color-background-dark);
+  text-shadow: none;
+}
+.launch_options {
+  display: flex;
+  flex-direction: row;
+
+  margin: 1em 0;
+  padding: 0;
+}
+.launch_option_list > * {
+  display: inline-block;
+}
+.launch_options a {
+  margin: 0 0.5em;
+  padding: 0;
+  border-bottom: 1px solid white;
+  color: white;
+
+  font-size: 1.3em;
+  cursor: pointer;
+  user-select: none;
+
+  opacity: 0.3;
+  transition: opacity 0.3s ease;
+}
+.launch_options a:hover:not(.disabled), .launch_options a.active {
+  opacity: 1;
+}
+.launch_options a.disabled {
+  cursor: default;
+}
+
+/********************************* MENU **/
+
+.nav_menu {
+  margin-bottom: 2em;
+
+  color: var(--color-text-accent);
+}
+.nav_menu > * {
+  line-height: 2em;
+}
+
+/********************************* CREDITS **/
+
+.nav_credits {
+  color: gray;
+}
+.nav_credits .top, .nav_credits .bottom {
+  display: flex;
+  flex-direction: row;
+
+  margin-bottom: 1em;
+}
+.nav_credits .left::first-line, .nav_credits .right::first-line, .nav_credits .center::first-line {
+  font-weight: bold;
+}
+.nav_credits .left, .nav_credits .right, .nav_credits .center {
+  /* Increase this value if running out of space for contributors */
+  flex: 1;
+
+  padding-right: 1em;
+  padding-left: 1em;
+
+  margin-bottom: 1em;
+}
+.nav_credits .left {
+  text-align: right;
+}
+.nav_credits .right {
+  text-align: left;
+}
+.nav_credits .center {
+  text-align: center;
+}
+
+.nav_credits a {
+  display: inline-block;
+  white-space: nowrap!important;
+}
+.nav_credits .top a {
+  /* Don't inline the top block */
+  display: block;
+}
+.nav_credits .left a {
+  padding-left: 10px;
+}
+.nav_credits .right a {
+  padding-right: 10px;
+}
+.nav_credits .center a {
+  padding: 0 5px;
+}
+.nav_credits a:hover {
+  cursor: pointer;
+  color: var(--color-text-accent);
+
+  transition: color 0.3s ease;
+}
+
+@media screen and (max-width: 600px) {
+  .nav_credits .top {
+    flex-direction: column;
+    margin-bottom: 0;
+  }
+  .nav_credits .left, .nav_credits .right {
+    text-align: center;
+
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .nav_credits a {
+    display: block;
+  }
+  .nav_credits .left a {
+    padding-left: 0;
+  }
+  .nav_credits .right a {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+
+/********************************* INFO **/
+
+.nav_info {
+  cursor: pointer;
+  color: var(--color-text-accent-active);
+  fill: var(--color-text-accent-active);
+
+  transition: color 0.3s ease, fill 0.3s ease;
+}
+.nav_info:hover {
+  color: var(--color-text-accent);
+  fill: var(--color-text-accent);
+}
+.nav_info > svg {
+  display: inline-block;
+  vertical-align: middle;
+  margin-bottom: 3px;
+  margin-right: 5px;
+}
+
+/********************************* SUBTITLES **/
+
+.subtitle_container {
+  margin-top: auto;
+  text-align: center;
+}
+.subtitle_container > * {
+  display: block;
+  margin: 10px;
+
+  font-size: 14px;
+  opacity: 0.3;
+}
+
+/********************************* GITHUB LINK **/
+
+#github_link {
+  text-align: center;
+}
+
+/********************************* RETURN HOME **/
+
+#return_home {
+  position: absolute;
+  top: 2em;
+  right: 2em;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  outline: none;
+  border: none;
+
+  opacity: 0.1;
+  transition: opacity 0.3s ease;
+}
+#return_home:hover {
+  opacity: 1;
+}
+#return_home > svg {
+  pointer-events: none;
+}
+
+/********************************* FOOTER PANELS **/
+
+.panel_container {
+  display: flex;
+  flex-direction: row;
+
+  scroll-snap-points-y: repeat(100vw);
+  scroll-snap-type: x mandatory;
+
+  overflow-x: auto;
+  width: 100%;
+  height: 100%;
+}
+.panel_container > * {
+  scroll-snap-align: start;
+
+  min-width: 100%;
+  margin-top: 2em;
+}
+.panel_nav {
+  text-align: center;
+}
+
+.panel_timeline {
+  overflow-y: auto;
+}
