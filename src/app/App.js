@@ -30,7 +30,7 @@ const DEVELOPERS = [
   {name: "Lixuan Lang", link: "https://www.linkedin.com/in/lixuan-lang-3ba206143/"},
   {name: "Seth D'Agostino", link: "https://github.com/sethdagostino"},
   {name: "Jacob Chazen", link: ""},
-  {name: "Jimmy Deng", link: ""},
+  {name: "Jimmy Dang", link: ""},
 ];
 const CONTRIBUTORS = [
   {name: "Maya Bello", link: "https://www.linkedin.com/in/maya-bello-6b8637a7/"},
