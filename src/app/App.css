@@ -1,6 +1,6 @@
 #root {
-  --color-text-accent: #FFCD00;
-  --color-text-accent-active: #C4A000;
+  --color-text-accent: #C4A000;
+  --color-text-accent-active: #FFCD00;
 
   --color-background: #006A96;
   --color-background-dark: #005173;
@@ -47,7 +47,7 @@
 .header_bar {
   position: sticky;
   top: 0;
-  border-bottom: 4px solid gold;
+  border-bottom: 4px solid var(--color-text-accent-active);
 
   font-family: 'Arvo', sans-serif;
   font-size: 3em;
@@ -311,14 +311,14 @@
 
 .nav_info {
   cursor: pointer;
-  color: var(--color-text-accent-active);
-  fill: var(--color-text-accent-active);
+  color: var(--color-text-accent);
+  fill: var(--color-text-accent);
 
   transition: color 0.3s ease, fill 0.3s ease;
 }
 .nav_info:hover {
-  color: var(--color-text-accent);
-  fill: var(--color-text-accent);
+  color: var(--color-text-accent-active);
+  fill: var(--color-text-accent-active);
 }
 .nav_info > svg {
   display: inline-block;

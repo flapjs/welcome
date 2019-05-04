@@ -69,12 +69,45 @@ class App extends React.Component
   componentDidMount()
   {
     window.addEventListener('scroll', this.onScroll);
+    this.initializeThemeColor();
   }
 
   //Override
   componentWillUnmount()
   {
+    window.removeEventListener('scroll', this.onScroll);
     if (this._typewriter) this._typewriter.stop();
+  }
+
+  initializeThemeColor()
+  {
+    const root = document.getElementById('root');
+    if (typeof localStorage !== 'undefined')
+    {
+      const prefsColor = localStorage.getItem('prefs-color');
+      if (prefsColor)
+      {
+        try
+        {
+          const jsonData = JSON.parse(prefsColor);
+          const colorPrimaryKey = '--color-primary';
+          const colorAccentKey = '--color-accent';
+          if (colorPrimaryKey in jsonData)
+          {
+            root.style.setProperty('--color-background', jsonData[colorPrimaryKey]);
+            root.style.setProperty('--color-background-dark', 'black');
+          }
+          if (colorAccentKey in jsonData)
+          {
+            root.style.setProperty('--color-text-accent', 'gray');
+            root.style.setProperty('--color-text-accent-active', jsonData[colorAccentKey]);
+          }
+
+          console.log(root.style);
+        }
+        catch(e) {}
+      }
+    }
   }
 
   onScroll(e)
