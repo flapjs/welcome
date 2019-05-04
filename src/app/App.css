@@ -16,6 +16,7 @@
   position: relative;
   width: 70em;
   height: 100vh;
+  min-height: 35em;
 }
 .header_container {
   position: relative;
@@ -34,8 +35,7 @@
   min-height: calc(100% - 7.5em);
 }
 
-.scrolling
-{
+.scrolling {
   background: none;
 }
 .scrolling .header_bar {
@@ -70,7 +70,10 @@
 
   border-radius: 2em;
   box-shadow: 0 6px 8px -8px black;
+
+  overflow: hidden;
 }
+
 @media screen and (min-width: 70em) {
   .header_bar {
     border-radius: 1em;
@@ -148,15 +151,18 @@
   flex: 1;
   color: white;
 
-  font-size: 2em;
+  font-size: 1.8em;
   text-align: center;
+}
+
+.welcome_container p {
+  margin: 0;
 }
 
 /********************************* LAUNCH **/
 
 .launch_container {
   width: 80%;
-  margin-top: 3em;
   margin-bottom: 3em;
   margin-left: 10%;
 }

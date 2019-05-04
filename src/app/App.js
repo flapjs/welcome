@@ -218,9 +218,10 @@ class App extends React.Component
             <div className="header_content">
               <span className="space"></span>
               <div className="welcome_container">
-                <h2>{"-= Welcome to Flap.js =-"}</h2>
+                <h2>{"Welcome to Flap.js"}</h2>
                 <p>{"We'll put something cool here soon ;)"}</p>
               </div>
+              <span className="space"></span>
               <div className="launch_container">
                 <button className="launch_button"
                   onClick={this.onLaunchButton}>
