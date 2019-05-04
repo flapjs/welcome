@@ -9,7 +9,7 @@ import UpIcon from './UpIcon.js';
 import Timeline from './Timeline.js';
 
 import TypeWriter from './TypeWriter.js';
-import {getRandomQuote} from './Quotes.js';
+import { getRandomQuote } from './Quotes.js';
 
 const LAUNCH_BUTTON_TEXT = "Launch Workspace";
 const SMALL_LAUNCH_BUTTON_TEXT = "Get Started!";
@@ -23,22 +23,22 @@ const HELP_LINK = "https://github.com/flapjs/FLAPJS-WebApp/blob/master/docs/HELP
 const GITHUB_LINK = "https://github.com/flapjs/FLAPJS-WebApp/";
 
 const PROFESSORS = [
-  {name: "Mia Minnes", link: "http://cseweb.ucsd.edu/~minnes/"}
+  { name: "Mia Minnes", link: "http://cseweb.ucsd.edu/~minnes/" }
 ];
 const DEVELOPERS = [
-  {name: "Andrew Kuo", link: "https://www.linkedin.com/in/andrew-kuo-790243132/"},
-  {name: "Lixuan Lang", link: "https://www.linkedin.com/in/lixuan-lang-3ba206143/"},
-  {name: "Seth D'Agostino", link: "https://github.com/sethdagostino"},
-  {name: "Jacob Chazen", link: "https://www.linkedin.com/in/jacob-chazen-62ab81148/"},
-  {name: "Jimmy Dang", link: "https://linkedin.com/in/jimmydang1"},
+  { name: "Andrew Kuo", link: "https://www.linkedin.com/in/andrew-kuo-790243132/" },
+  { name: "Lixuan Lang", link: "https://www.linkedin.com/in/lixuan-lang-3ba206143/" },
+  { name: "Seth D'Agostino", link: "https://github.com/sethdagostino" },
+  { name: "Jacob Chazen", link: "https://www.linkedin.com/in/jacob-chazen-62ab81148/" },
+  { name: "Jimmy Dang", link: "https://linkedin.com/in/jimmydang1" },
 ];
 const CONTRIBUTORS = [
-  {name: "Maya Bello", link: "https://www.linkedin.com/in/maya-bello-6b8637a7/"},
-  {name: "Noah Solomon", link: "https://www.linkedin.com/in/noah-solomon-9a8526129/"},
-  {name: "David Osuna", link: "https://www.linkedin.com/in/osunadavid/"},
-  {name: "Xuanqiang \"Erik\" Zhao", link: "https://www.linkedin.com/in/xuanqiang-zhao-364225153/"},
-  {name: "Ravneet Dhanjal", link: "https://github.com/rdhanjal5"},
-  {name: "Max Morehead", link: "https://github.com/moreheadm"}
+  { name: "Maya Bello", link: "https://www.linkedin.com/in/maya-bello-6b8637a7/" },
+  { name: "Noah Solomon", link: "https://www.linkedin.com/in/noah-solomon-9a8526129/" },
+  { name: "David Osuna", link: "https://www.linkedin.com/in/osunadavid/" },
+  { name: "Xuanqiang \"Erik\" Zhao", link: "https://www.linkedin.com/in/xuanqiang-zhao-364225153/" },
+  { name: "Ravneet Dhanjal", link: "https://github.com/rdhanjal5" },
+  { name: "Max Morehead", link: "https://github.com/moreheadm" }
 ];
 
 class App extends React.Component
@@ -49,11 +49,13 @@ class App extends React.Component
 
     this._typewriter = null;
     this._panelContainer = React.createRef();
+    this._scrollBackground = false;
 
     this.state = {
       launchOption: ""
     };
 
+    this.onScroll = this.onScroll.bind(this);
     this.onMOTDButton = this.onMOTDButton.bind(this);
     this.onLaunchButton = this.onLaunchButton.bind(this);
     this.onReturnHomeButton = this.onReturnHomeButton.bind(this);
@@ -66,12 +68,26 @@ class App extends React.Component
   //Override
   componentDidMount()
   {
+    window.addEventListener('scroll', this.onScroll);
   }
 
   //Override
   componentWillUnmount()
   {
     if (this._typewriter) this._typewriter.stop();
+  }
+
+  onScroll(e)
+  {
+    const position = window.scrollY;
+    if (position > 10)
+    {
+      this._scrollBackground = true;
+    }
+    else
+    {
+      this._scrollBackground = false;
+    }
   }
 
   onMOTDButton(e)
@@ -120,20 +136,21 @@ class App extends React.Component
     newTab.focus();
   }
 
-  renderLaunchOption(option, label, enabled=true)
+  renderLaunchOption(option, label, enabled = true)
   {
     return (
       <a className={(!enabled ? " disabled " : "") +
         (this.state.launchOption === option ? " active " : "")}
-        onClick={e => {
-          if (enabled) this.setState({launchOption: option});
+        onClick={e =>
+        {
+          if (enabled) this.setState({ launchOption: option });
         }}>
         {label}
       </a>
     );
   }
 
-  renderCreditLink(link, label, enabled=true)
+  renderCreditLink(link, label, enabled = true)
   {
     return (
       <a key={label + ":" + link}
@@ -174,14 +191,17 @@ class App extends React.Component
 
     if (this._typewriter) motdText = this._typewriter.getDisplayText();
 
+    const scrolling = this._scrollBackground;
+
     return (
-      <div className={Style.document_container}>
+      <div className={Style.document_container +
+        " " + (scrolling ? " scrolling " : "")}>
         <span className="space"></span>
         <div className={Style.app_container}>
           <div className="header_container">
             <div className="header_bar">
               <div className="logo_container">
-                <LogoIcon/>
+                <LogoIcon />
                 <label className="logo_label">{"Flap.js"}</label>
               </div>
               <div className="motd_container">
@@ -223,7 +243,7 @@ class App extends React.Component
           <div className="footer_container">
             <button id="return_home"
               onClick={this.onReturnHomeButton}>
-              <UpIcon/>
+              <UpIcon />
             </button>
             <div ref={this._panelContainer} className="panel_container">
               <div className="panel_nav">
@@ -256,12 +276,12 @@ class App extends React.Component
                 </div>
               </div>
               <div className="panel_timeline">
-                <Timeline/>
+                <Timeline />
               </div>
             </div>
             <div id="github_link">
               <a className="nav_info" onClick={this.onGithubButton}>
-                <CodeIcon/>
+                <CodeIcon />
                 Find it on <b>GitHub</b>
               </a>
             </div>
