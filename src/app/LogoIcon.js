@@ -7,8 +7,8 @@ class Icon extends React.Component
   //Override
   render()
   {
-    const MAIN_COLOR = "black";
-    const BACK_COLOR = "white";
+    const MAIN_COLOR = "white";
+    const BACK_COLOR = "var(--color-background)";
 
     return (
       <svg id={this.props.id} className={this.props.className} style={this.props.style}

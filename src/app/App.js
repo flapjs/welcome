@@ -105,7 +105,7 @@ class App extends React.Component
 
           console.log(root.style);
         }
-        catch(e) {}
+        catch (e) { }
       }
     }
   }
@@ -113,7 +113,7 @@ class App extends React.Component
   onScroll(e)
   {
     const position = window.scrollY;
-    if (position > 10)
+    if (position > 100)
     {
       this._scrollBackground = true;
     }
@@ -194,7 +194,7 @@ class App extends React.Component
     );
   }
 
-  //Override
+  /** @override */
   render()
   {
     let launchText;
@@ -251,14 +251,13 @@ class App extends React.Component
             <div className="header_content">
               <span className="space"></span>
               <div className="welcome_container">
-                <h2>{"Welcome to Flap.js"}</h2>
-                <p>{"We'll put something cool here soon ;)"}</p>
+                <h2>Explore what it means to be <u>computable</u>.</h2>
               </div>
               <span className="space"></span>
               <div className="launch_container">
                 <button className="launch_button"
                   onClick={this.onLaunchButton}>
-                  {launchText}
+                  <label>{launchText}</label>
                 </button>
                 <div className="launch_options">
                   <span className="space"></span>
