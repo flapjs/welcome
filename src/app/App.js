@@ -28,9 +28,13 @@ const PROFESSORS = [
 const DEVELOPERS = [
   { name: "Andrew Kuo", link: "https://www.linkedin.com/in/andrew-kuo-790243132/" },
   { name: "Lixuan Lang", link: "https://www.linkedin.com/in/lixuan-lang-3ba206143/" },
-  { name: "Seth D'Agostino", link: "https://github.com/sethdagostino" },
+  { name: "Seth D'Agostino", link: "https://www.linkedin.com/in/seth-d-agostino-1209a0191/" },
   { name: "Jacob Chazen", link: "https://www.linkedin.com/in/jacob-chazen-62ab81148/" },
-  { name: "Jimmy Dang", link: "https://linkedin.com/in/jimmydang1" },
+  { name: "Jimmy Dang", link: "https://www.linkedin.com/in/jimmydang1/" },
+  { name: "Will Xu", link: "https://linkedin.com/in/willxu1/"},
+  { name: "Zijing Di", link: "https://github.com/dizidizidi"},
+  { name: "Priyal Suneja", link: "https://www.linkedin.com/in/priyalsuneja/"},
+  { name: "David Osuna", link: ""},
 ];
 const CONTRIBUTORS = [
   { name: "Maya Bello", link: "https://www.linkedin.com/in/maya-bello-6b8637a7/" },
