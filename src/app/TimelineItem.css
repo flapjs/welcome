@@ -21,7 +21,7 @@
 
 /* Place the container to the left */
 .left {
-  left: 0;
+  left: 8%;
 }
 
 /* Place the container to the right */
@@ -59,7 +59,7 @@
 
 /* Fix the circle for containers on the right side */
 .right::after {
-  left: -16px;
+  left: -12px;
 }
 
 /* The actual content */
