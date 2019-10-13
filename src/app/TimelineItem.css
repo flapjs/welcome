@@ -3,6 +3,8 @@
     position: relative;
     background-color: var(--color-background);
     width: 30%;
+    color: white;
+    border-radius: 1em;
 }
 
 /* The circles on the timeline */
@@ -37,7 +39,7 @@
   top: 22px;
   width: 0;
   z-index: 1;
-  right: 30px;
+  right: 24px;
   border: medium solid white;
   border-width: 10px 0 10px 10px;
   border-color: transparent transparent transparent white;
