@@ -1,9 +1,17 @@
 :local(.timeline_container) {
-  display: flex;
-  flex-direction: column;
   height: 100%;
-
   padding: 0 4em;
-  line-height: 3em;
-  color: gray;
+  position: relative;
+  margin: 0, auto;
+}
+
+:local(.timeline_container::after) {
+  content: '';
+  position: absolute;
+  width: 1em;
+  background-color: black;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  /*margin-left: -3px;*/
 }
