@@ -1,10 +1,26 @@
 import React from 'react';
 import Style from './Timeline.css';
+import TimelineItem from './TimelineItem.js';
+
+const TIMELINEITEMS = [
+  {title:"Summer 2018", content:"Finite Automata. Andrew and his gang bring his prototype to life!"},
+  {title:"Fall 2018", content:"Regular Expressions. Seth joins and sort of helps"},
+  {title:"Winter 2019", content: "Pushdown Automata"},
+  {title:"Spring 2019", content: "Context-free Grammar"},
+];
 
 class Timeline extends React.Component
 {
   constructor(props) { super(props); }
 
+  renderTimelineItem(header="Untitled", content="None", index) {
+    if(index % 2 == 1) {
+      return <TimelineItem className="left" header={header} content={content}/>
+    }
+    else {
+      return <TimelineItem className="right" header={header} content={content}/>
+    }
+  }
   //Override
   render()
   {
@@ -13,9 +29,7 @@ class Timeline extends React.Component
         className={Style.timeline_container +
           " " + this.props.className}
         style={this.props.style}>
-        <div>
-          <label>An intuitive web app to help you explore what it means to be computable. Experiment and construct formal languages from finite automata to Turing machines with real-time analysis and error checking. From its humble beginnings as a small tool built by a determined CSE 105 homework group at UC San Diego inspired by JFLAP, it has continued to still be developed by the students, for the students.</label>
-        </div>
+            {TIMELINEITEMS.map((e, index) => this.renderTimelineItem(e.title, e.content, index))}
       </div>
     );
   }
