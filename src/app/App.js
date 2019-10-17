@@ -34,7 +34,7 @@ const DEVELOPERS = [
   { name: "Will Xu", link: "https://linkedin.com/in/willxu1/"},
   { name: "Zijing Di", link: "https://github.com/dizidizidi"},
   { name: "Priyal Suneja", link: "https://www.linkedin.com/in/priyalsuneja/"},
-  { name: "David Osuna", link: ""},
+  { name: "Zexiang Chen", link: ""},
 ];
 const CONTRIBUTORS = [
   { name: "Maya Bello", link: "https://www.linkedin.com/in/maya-bello-6b8637a7/" },
