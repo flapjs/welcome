@@ -438,5 +438,6 @@
 }
 
 .panel_timeline {
-  overflow-y: auto;
+  overflow-y: scroll;
+  height: 40em;
 }
