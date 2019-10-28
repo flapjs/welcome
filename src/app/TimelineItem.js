@@ -13,7 +13,7 @@ class TimelineItem extends React.Component
         className={Style.timeline_item_container +
           " " + this.props.className}
         style={this.props.style}>
-            <div class="content">
+            <div class="content grow">
                 <h2>{this.props.header}</h2>
                 <p>{this.props.content}</p>
             </div>
