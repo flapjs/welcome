@@ -28,7 +28,7 @@ const PROFESSORS = [
 const DEVELOPERS = [
     { name: "Jacob Chazen", link: "https://www.linkedin.com/in/jacob-chazen-62ab81148/" },
     { name: "Zijing Di", link: "https://github.com/dizidizidi" },
-    { name: "Thai Gillespie", link: "" },
+    { name: "Thai Gillespie", link: "https://www.linkedin.com/in/thai-gillespie-941851194/" },
     { name: "Diana Issatayeva", link: "www.linkedin.com/in/dissatay" },
     { name: "Andrew Kuo", link: "https://www.linkedin.com/in/andrew-kuo-790243132/" },
     { name: "Yelitza Mendez", link: "" }
